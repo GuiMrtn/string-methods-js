@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods</title>
+</head>
+<body style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+    <h1>Méthodes pour les chaînes de caractères</h1>
+
+    <p><strong>1. length</strong> : la méthode String.length permet de connaître la longueur d'une chaîne de caractères (en comptant les espaces).</p>
+    <p><strong>2. charAt()</strong> : la méthode charAt() permet de récupérer un caractère situé à une position spécifique dans une chaîne de caractères. Si on passe un index qui dépasse la longueur de la chaîne ou qui est négatif, la méthode retournera une chaîne vide.</p>
+    <p><strong>3, indexOf()</strong> : la méthode indexOf() permet de rechercher la première occurence d'une sous-chaîne (ou d'un caractère) dans une chaîne de caractères et retourne l'index de cette occurence. Si la sous-chaîne n'est pas trouvée, la méthode retourne -1. Attention car cette méthode est sensible à la casse. La syntaxe est la suivante : string.indexOf(recherche, positionDepart). 
+        <ul>
+            <li>
+                recherche: la sous-chaîne ou le caractère recherché.
+            </li>
+            <li>
+                positionDepart (optiionnel) : l'index à partir duquel la recherche doit commencer. Si ce paramètre est omis, la recherche commence à l'index 0.
+            </li>
+        </ul>
+    </p>
+    <p><strong>4. lastIndexOf()</strong> : la méthode lastIndexOf() fonctionne de manière similaire à la méthode indexOf(), mais elle recherche la dernière occurrence d'une sous-chaîne ou d'un caractère dans une chaîne de caractères. Elle renvoie l'index de la dernière occurrence trouvée. Si la sous-chaîne n'est pas trouvée, la méthode retourne -1. La syntaxe est la suivante : string.indexOf(recherche, positionDepart). Cette recherche est également sensible à la casse.
+        <ul>
+            <li>
+                recherche : La sous-chaîne ou le caractère à rechercher.
+            </li>
+            <li>
+                positionDepart (optionnel) : l'index à partir duquel la recherche doit commencer, mais ici la recherche se fait de droite à gauche. Si ce paramètre est omis, la recherche commence à la fin de la chaîne.
+            </li>
+        </ul>
+    </p>
+    <p><strong>5. slice()</strong> : la méthode slice() permet d'extraire une portion d'une chaîne de caractères en fonction des indices spécifiés, et renvoie une nouvelle chaîne sans modifier la chaîne d'origine. La syntaxe est la suivante : string.slice(start, end). Il est possible d'utiliser des indices négatifs pour compter à partir de la fin de la chaîne. Un indice négatif signifie que l'extraction commence à partir de la fin de la chaîne, avec -1 représentant le dernier caractère.
+        <ul>
+            <li>
+                start : l'indice à partir duquel commencer l'extraction (inclus).
+            </li>
+            <li>
+                end (optionnel) : L'indice où s'arrêter (non-inclus). Si cet argument est omis, l'extraction se fait jusqu'à la fin de la chaîne.
+            </li>
+        </ul>
+    </p>
+    <p><strong>6. substring()</strong> : la méthode substring() permet d'extraire une partie d'une chaîne de caractères entre deux indices, et retourne une nouvelle chaîne sans modifier l'originale. La syntaxe est la suivante : string.slice(start, end). Contrairement à slice(), la méthode substring() ne supporte pas les indices négatifs. Si un indice négatif est fourni, il sera traité comme 0. En outre, si l'indice de début est supérieur à l'indice de fin, la méthode substring() intervertit automatiquement les valeurs.
+        <ul>
+            <li>
+                start : l'indice à partir duquel commencer l'extraction (inclus).
+            </li>
+            <li>
+                end (optionnel) : L'indice où l'extraction s'arrête (non-inclus). Si cet argument est omis, l'extraction se fait jusqu'à la fin de la chaîne.
+            </li>
+        </ul>
+    </p>
+    <p><strong>7. split()</strong> : la méthode split() permet de diviser une chaîne de caractères en un tableau de sous-chaînes, en fonction d'un séparateur spécifié. C'est très utile pour décomposer une chaîne en morceaux plus petits, basés sur un délimiteur particulier (comme un espace, une virgule, un tiret, etc.). La syntaxe est la suivante : string.slice(separateur, limite).
+        <ul>
+            <li>
+                separateur : le caractère, la chaîne ou l'expression régulière utilisée pour décomposer la chaîne. Si ce paramètre est omis ou undefined, la méthode retourne un tableau contenant l'intégralité de la chaîne.
+            </li>
+            <li>
+                limite (optionnel) : un entier indiquant le nombre maximal de sous-chaînes à retourner. Si ce paramètre est omis, la méthode divise toute la chaîne.
+            </li>
+        </ul>
+    </p>
+    <p><strong>8. includes()</strong> : la méthode includes() permet de vérifier si une chaîne de caractères contient une sous-chaîne donnée. Elle renvoie un booléen (true ou false) en fonction de la présence ou non de cette sous-chaîne. Cette méthode est sensible à la casse. La syntaxe est la suivante : string.includes(sousChaine, positionDepart).
+        <ul>
+            <li>
+                sousChaine : la chaîne recherchée dans la chaîne principale.
+            </li>
+            <li>
+                positionDepart (optionnel) : l'indice à partir duquel commencer la recherche. Par défaut, la recherche commence au début de la chaîne.
+            </li>
+        </ul>
+    </p>
+    <p><strong>9. startWith()</strong> : la méthode startsWith() permet de vérifier si une chaîne de caractères commence par une sous-chaîne donnée. Elle renvoie un booléen (true ou false) selon que la chaîne commence ou non par la sous-chaîne spécifiée. Cette méthode est sensible à la casse. Vous pouvez utiliser startsWith() pour vérifier des préfixes dans des données, comme des numéros de téléphone, des codes de pays, ou pour filtrer des chaînes de caractères. La synxtaxe est celle-ci : string.startsWith(sous-chaîne, positionDepart).
+        <ul>
+            <li>
+                sousChaine : la chaîne que nous souhaitons vérifier pour savoir si elle est au début de la chaîne principale.
+            </li>
+            <li>
+                positionDepart (optionnel) : l'indice à partir duquel commencer la vérification. Par défaut, la recherche commence au début de la chaîne (indice 0).
+            </li>
+        </ul>
+    </p>
+    <p><strong>10. endsWith()</strong> : la méthode endsWith() permet de vérifier si une chaîne de caractères se termine par une sous-chaîne spécifique. Elle renvoie un booléen (true ou false) selon que la chaîne se termine ou non par cette sous-chaîne. Cette méthode est sensible à la casse et est utile pour vérifier les extensions de fichiers ou des URL.La synxtaxe est celle-ci : string.endsWith(sous-chaîne, longueur).
+        <ul>
+            <li>
+                sousChaine : la chaîne que nous souhaitons vérifier pour savoir si elle est à la fin de la chaîne principale.
+            </li>
+            <li>
+                longueur (optionnel) : un entier qui indique jusqu'où la chaîne est considérée pour la vérification. Si ce paramètre est spécifié, la méthode considère seulement les caractères jusqu'à cette longueur, sans inclure ceux après.
+            </li>
+        </ul>
+    </p>
+    <p><strong>11. concat()</strong> : la méthode concat() permet de concaténer deux ou plusieurs chaînes de caractères pour en former une nouvelle. Elle ne modifie pas les chaînes d'origine, mais renvoie une nouvelle chaîne qui est le résultat de la concaténation. La syntaxe est celle-ci : str.concat(chaine1, chaine2....chaineN). Pour des raisons de performance, il est fortement recommandé de ne pas utiliser cette méthode et de lui préferer les opérateurs + et +=.</p>
+    <p><strong>12. repeat()</strong> : la méthode repeat() permet de créer une nouvelle chaîne de caractères en répétant la chaîne d'origine un certain nombre de fois. Cette méthode renvoie la chaîne répétée et ne modifie pas la chaîne d'origine. La syntaxe est celle-ci : string.repeat(nombre).
+        <ul>
+            <li>
+                nombre : un entier non-négatif qui spécifie le nombre de fois que la chaîne doit être répétée. Si nombre vaut 0, la méthode renvoie une chaîne vide. Si on passe un nombre décimal, il sera converti en entier en supprimant la partie décimale. Si on passe un nombre négatif ou une valeur qui n'est pas un entier, la méthode déclenchera une erreur RangeError.
+            </li>
+        </ul>
+    </p>
+    <p><strong>13. trim()</strong> : la méthode trim() permet de supprimer les espaces blancs (espaces, tabulations, retours à la ligne, etc...) situés au début et à la fin d'une chaîne de caractères. Cette méthode ne modifie pas la chaîne d'origine, mais renvoie une nouvelle chaîne sans les espaces en excès.</p>
+    <p><strong>14. trimStart()</strong> : la méthode trimStart() permet de supprimer les espaces blancs (espaces, tabulations, retours à la ligne, etc...) situés au début d'une chaîne de caractères. Cette méthode ne modifie pas la chaîne d'origine, mais renvoie une nouvelle chaîne sans les espaces en excès.</p>
+    <p><strong>15. trimEnd()</strong> : la méthode trimEnd() permet de supprimer les espaces blancs (espaces, tabulations, retours à la ligne, etc...) situés à la fin d'une chaîne de caractères. Cette méthode ne modifie pas la chaîne d'origine, mais renvoie une nouvelle chaîne sans les espaces en excès.</p>
+    <p><strong>16. padStart()</strong> : la méthode padStart() permet de compléter une chaîne de caractères en ajoutant des caractères au début de la chaîne jusqu'à atteindre une certaine longueur. C'est utile pour formater les chaînes de manière uniforme, par exemple pour ajouter des zéros devant des nombres ou aligner du texte. La syntaxe est la suivante : string.padStart(longueurCible, padString). Si la longueur de la chaîne originale est déjà supérieure ou égale à la longueur spécifiée, padStart() renvoie la chaîne d'origine sans changement.
+        <ul>
+            <li>
+                longueurCible : la longueur totale que la chaîne finale doit avoir après avoir ajouté le remplissage. Si cette valeur est inférieure ou égale à la longueur de la chaîne d'origine, la chaîne est renvoyée sans modification.
+            </li>
+            <li>
+                padString (optionnel) : la chaîne à ajouter au début de la chaîne d'origine pour atteindre la longueur cible. Par défaut, il s'agit d'un espace (" ").
+            </li>
+        </ul>
+    </p>
+    <p><strong>17. padEnd()</strong> : la méthode padEnd() permet de compléter une chaîne de caractères avec un autre ensemble de caractères jusqu'à ce qu'elle atteigne une longueur spécifiée. Ce remplissage se fait à la fin de la chaîne. C'est l'inverse de la méthode padStart(), qui ajoute des caractères au début. La syntaxe est la suivante : string.padEnd(longueurCible, chaineRemplissage). Si nous ne spécifions pas de chaîne de remplissage, des espaces seront utilisés par défaut. Si la chaîne d'origine est déjà plus longue ou égale à la longueur cible, padEnd() ne fait rien et renvoie simplement la chaîne d'origine. Si la chaîne de remplissage est plus longue que ce qui est nécessaire, elle sera tronquée pour s'ajuster à la longueur cible.
+        <ul>
+            <li>
+                longueurCible : la longueur totale que la chaîne doit atteindre après le remplissage.
+            </li>
+            <li>
+                chaineRemplissage (optionnel) : la chaîne utilisée pour compléter la chaîne d'origine. Si elle n'est pas spécifiée, des espaces seront utilisés par défaut.
+            </li>
+        </ul>
+    </p>
+    <p><strong>18. localeCompare()</strong> : la méthode localeCompare() permet de comparer deux chaînes de caractères en tenant compte des conventions linguistiques spécifiques à une locale donnée (par exemple, la langue ou les règles de tri d'une région). Elle est très utile lorsque vous voulez trier des chaînes en fonction de l'alphabet ou des règles de tri d'une langue spécifique, car cela varie d'une langue à l'autre. La syntaxe est la suivante : str.localeCompare(autreChaine, [locale], [options]).
+        <ul>
+            <li>
+                str : La chaîne de caractères sur laquelle la méthode est appelée.
+            </li>
+            <li>
+                autreChaine : La chaîne de caractères à comparer avec la chaîne d'origine.
+            </li>
+            <li>
+                locale (optionnel) : un argument optionnel pour spécifier la locale utilisée pour la comparaison. Par défaut, c'est l'environnement de la machine qui détermine la locale.
+            </li>
+            <li>
+                options (optionnel) : un objet qui permet de spécifier des options de comparaison comme la sensibilité à la casse, les accents, etc.
+            </li>
+        </ul>
+        <p>Valeurs de retour : la méthode renvoie un nombre qui indique si la chaîne de caractères d'origine vient avant, après ou est égale à l'autre chaîne :
+            <ul>
+                <li>
+                    -1 : La chaîne d'origine vient avant autreChaine dans l'ordre alphabétique ('a'.localeCompare('b')).
+                </li>
+                <li>
+                    1 : La chaîne d'origine vient après autreChaine dans l'ordre alphabétique ('b'.localeCompare('a')).
+                </li>
+                <li>
+                    0 : Les chaînes sont considérées comme égales ('a'.localeCompare('a')).
+                </li>
+            </ul>
+        </p>
+    </p>
+    <p><strong>19. search()</strong> : la méthode search() permet de rechercher une expression régulière dans une chaîne de caractères et de renvoyer l'index de la première occurrence de cette expression. Si l'expression régulière n'est pas trouvée, elle renvoie -1. La syntaxe est la suivante : string.search(regexp).
+        <ul>
+            <li>
+                regexp : Une expression régulière (ou un objet RegExp) à rechercher dans la chaîne. Si regexp est une chaîne de caractères, elle sera convertie en expression régulière avec le modificateur global (g).
+            </li>
+        </ul>
+    </p>
+    <p><strong>20. match()</strong> :  la méthode match() est utilisée pour rechercher une correspondance dans une chaîne de caractères en utilisant une expression régulière. Si la correspondance est trouvée, match() retourne un tableau contenant le premier élément est la chaîne de caractères correspondante ou, s'il y en a, les éléments suivants. Si aucune correspondance n'est trouvée, elle retourne null. La syntaxe est la suivante : string.match(regexp).
+        <ul>
+            <li>
+                string : La chaîne de caractères sur laquelle vous voulez effectuer la recherche.
+            </li>
+            <li>
+                regexp : Une expression régulière (ou un objet RegExp) qui définit le modèle à rechercher.
+            </li>
+        </ul>
+    </p>
+    <p><strong>21. matchAll()</strong> : la méthode matchAll() est utilisée pour trouver toutes les correspondances d'une expression régulière dans une chaîne de caractères. Elle renvoie un itérateur qui produit tous les résultats trouvés, y compris les groupes capturés. Cela permet de récupérer facilement toutes les correspondances sans avoir à utiliser une boucle explicite. Cette méthode retourne un objet Iterator (itérateur) qui produit des tableaux pour chaque correspondance, où le premier élément du tableau est la chaîne correspondante et les éléments suivants sont les groupes capturés. Si aucune correspondance n'est trouvée, l'itérateur ne produit aucun résultat. La syntaxe est la suivante : string.matchAll(regexp).
+        <ul>
+            <li>
+                string : La chaîne sur laquelle on souhaite effectuer la recherche. 
+            </li>
+            <li>
+                regexp : une expression régulière (ou un objet RegExp) qui définit le modèle à rechercher. Si on utilise le modificateur g (global), nous devons le faire pour obtenir toutes les correspondances.
+            </li>
+        </ul>
+    </p>
+    <p><strong>22. replace()</strong> :  la méthode replace() est utilisée pour remplacer une partie d'une chaîne de caractères par une autre. Elle est très utile pour manipuler des textes, corriger des erreurs, ou formater des données. Par défaut, sans l'utilisation d'une expression régulière avec le drapeau g, seule la première occurrence de searchValue sera remplacée. La méthode est sensible à la casse. La syntaxe est celle-ci : str.replace(searchValue, newValue).
+        <ul>
+            <li>
+                searchValue : La chaîne ou l'expression régulière que vous souhaitez rechercher dans la chaîne originale.  
+            </li>
+            <li>
+                newValue : La chaîne qui remplacera chaque occurrence de searchValue.
+            </li>
+        </ul>
+    </p>
+    <p><strong>23. replaceAll()</strong> : la méthode replaceAll() est utilisée pour remplacer toutes les occurrences d'une sous-chaîne ou d'une expression régulière dans une chaîne de caractères. Contrairement à la méthode replace(), qui ne remplace que la première occurrence par défaut, replaceAll() garantit que toutes les instances du motif recherché sont remplacées. La syntaxe est celle-ci : str.replaceAll(searchValue, newValue).
+        <ul>
+            <li>
+                searchValue : La chaîne ou l'expression régulière que vous souhaitez rechercher dans la chaîne d'origine.
+            </li>
+            <li>
+                newValue : La chaîne qui remplacera chaque occurrence de searchValue.
+            </li>
+        </ul>
+    </p>
+    <p><strong>24. charCodeAt()</strong> : la méthode charCodeAt() permet de renvoyer le code Unicode du caractère situé à un indice spécifique d'une chaîne de caractères. Cela permet de connaître la valeur numérique du caractère correspondant, souvent utilisée pour manipuler des caractères au niveau de leur représentation en code Unicode. La méthode renvoie un entier représentant la valeur Unicode (ou code UTF-16) du caractère situé à l'index spécifié. Par exemple, le caractère 'A' a le code Unicode 65, le caractère 'B' a le code 66, etc. La syntaxe est celle-ci : str.charCodeAt(index).
+        <ul>
+            <li>
+                index : C'est la position du caractère dans la chaîne pour lequel vous souhaitez obtenir le code Unicode. Cet indice commence à 0. Si l'index est hors limites, la méthode renvoie NaN.
+            </li>
+        </ul> 
+    </p>
+    <p><strong>25. codePointAt()</strong> : la méthode codePointAt() renvoie le point de code Unicode complet d'un caractère à une position spécifique dans une chaîne. Cela permet d'obtenir le code Unicode même pour les caractères qui nécessitent plus de 16 bits (comme certains caractères spéciaux et les émojis), contrairement à charCodeAt() qui ne renvoie que des valeurs sur 16 bits. Si on passe un index qui est en dehors de la longueur de la chaîne, la méthode retournera undefined. La syntaxe est celle-ci : str.codePointAt(index).
+        <ul>
+            <li>
+                index : La position du caractère dans la chaîne pour lequel on souhaite obtenir le point de code Unicode. Cet index commence à 0. 
+            </li>
+        </ul>
+    </p>
+    <p><strong>26. fromCharCode()</strong> : la méthode fromCharCode() est une fonction statique de l'objet String qui permet de créer une chaîne de caractères à partir d'une séquence de valeurs Unicode (codes de caractères). La syntaxe est celle-ci : str.fromCharCode(num1, num2..., numN).
+        <ul>
+            <li>
+                num1, num2, ..., numN : une ou plusieurs valeurs numériques représentant les codes de caractères Unicode (valeurs entières comprises entre 0 et 65535).
+            </li>
+        </ul>
+    </p>
+    <p><strong>27. fromCodePoint()</strong> : la méthode fromCodePoint() est une méthode statique de l'objet String qui permet de créer une chaîne de caractères à partir d'un ou plusieurs points de code Unicode. Contrairement à String.fromCharCode(), cette méthode peut gérer des points de code Unicode situés au-delà de la plage BMP (Basic Multilingual Plane), ce qui permet de représenter des caractères spéciaux comme des emoji ou des symboles rares. La syntaxe est celle-ci : str.fromCodePoint(num1, num2..., numN).
+        <ul>
+            <li>
+                num1, num2, ..., numN : Une ou plusieurs valeurs numériques représentant des points de code Unicode. Ces valeurs peuvent être des entiers allant de 0 à 0x10FFFF (1 114 111 en décimal).
+            </li>
+        </ul>
+    </p>
+    <p><strong>28. normalize()</strong> : la méthode normalize() est utilisée pour normaliser une chaîne de caractères selon une forme Unicode spécifique. La normalisation Unicode consiste à transformer une chaîne en une forme standard pour s'assurer que deux chaînes qui sont visuellement équivalentes mais codées différemment aient la même représentation binaire. En Unicode, certains caractères peuvent être représentés de plusieurs façons. Par exemple, la lettre "é" peut être codée soit sous forme de caractère unique (é), soit sous forme de deux caractères (e + accent aigu). Ces formes peuvent sembler identiques visuellement mais sont différentes sur le plan binaire. normalize() permet de standardiser ces différentes représentations. La syntaxe est celle-ci : str.normalize([form]).
+        <ul>
+            <li>
+                str : La chaîne de caractères sur laquelle la méthode est appelée. 
+            </li>
+            <li>
+                form (optionnel) : Une chaîne qui spécifie la forme de normalisation à utiliser. Elle peut prendre les valeurs suivantes :
+                <ul>
+                    <li>
+                        NFC (Normal Form Canonical Composition) : Les caractères sont combinés de manière canonique. Par exemple, e + accent aigu devient é sous forme unique.
+                    </li>
+                    <li>
+                        NFD (Normal Form Canonical Decomposition) : Les caractères sont décomposés en leurs éléments constitutifs. Par exemple, é devient e + accent aigu.
+                    </li>
+                    <li>
+                        NFKC (Normalization Form Compatibility Composition) : Similaire à NFC mais prend également en compte les caractères de compatibilité Unicode qui sont visuellement identiques mais différents sur le plan sémantique. Par exemple, certains caractères de style (comme les chiffres en exposant) sont convertis en caractères normaux.
+                    </li>
+                    <li>
+                        NFKD (Normalization Form Compatibility Decomposition) : Similaire à NFD, mais prend également en compte les caractères de compatibilité.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </p>
+    <p><strong> 29. toLowerCase()</strong> : la méthode toLowerCase() est utilisée pour convertir tous les caractères d'une chaîne en minuscules. Elle ne modifie pas la chaîne d'origine, mais retourne une nouvelle chaîne avec les caractères en minuscules. Cette méthode est utile pour comparer des chaînes sans tenir compte de la casse, ou pour afficher un texte uniformément en minuscules. La syntaxe est la suivante : str.toLowerCase().</p>
+    <p><strong>30. toUppercase()</strong> : la méthode toUpperCase() est utilisée pour convertir tous les caractères d'une chaîne en majuscules. Elle retourne une nouvelle chaîne avec tous les caractères transformés, sans modifier la chaîne d'origine. La syntaxe est la suivante : str.toUpperCase().</p>
+    <p><strong>31. toLocaleLowerCase</strong> : la méthode toLocaleLowerCase() est utilisée pour convertir une chaîne de caractères en minuscules, mais en tenant compte des règles de casse spécifiques à une locale (langue ou région). Cela permet d'appliquer des règles linguistiques spécifiques lors de la conversion, ce qui peut être nécessaire pour certaines langues, comme le turc, qui a des règles particulières concernant la conversion des majuscules en minuscules. La syntaxe est la suivante : str.toLocaleLowerCase([locales]).
+        <ul>
+            <li>
+                locales (facultatif) : Une chaîne ou un tableau de chaînes qui représentent des codes de langues conformes à la norme BCP 47 (comme "en-US" pour l'anglais américain ou "tr" pour le turc). Si ce paramètre est omis, la locale de l'environnement sera utilisée par défaut.
+            </li>
+        </ul>
+    </p>
+    <p><strong>32. toLocaleUpperCase</strong> : la méthode toLocaleUpperCase() est utilisée pour convertir une chaîne de caractères en majuscules, mais en tenant compte des règles de casse spécifiques à une locale (langue ou région). Cela permet d'appliquer des règles linguistiques spécifiques lors de la conversion, ce qui peut être nécessaire pour certaines langues, comme le turc, qui a des règles particulières concernant la conversion des majuscules en minuscules. La syntaxe est la suivante : str.toLocaleUpperCase([locales]).
+        <ul>
+            <li>
+                locales (facultatif) : Une chaîne ou un tableau de chaînes qui représentent des codes de langues conformes à la norme BCP 47 (comme "en-US" pour l'anglais américain ou "tr" pour le turc). Si ce paramètre est omis, la locale de l'environnement sera utilisée par défaut.
+            </li>
+        </ul>
+    </p>
+    <p><strong>33. toString()</strong> : la méthode toString() est utilisée pour retourner une représentation sous forme de chaîne de caractères de l'objet String. En général, cette méthode est implicitement appelée lorsqu'une opération de chaîne de caractères est effectuée sur un objet de type String, mais elle peut également être appelée explicitement.</p>
+    <p><strong> 34. valueOf()</strong> : la méthode valueOf() est utilisée pour renvoyer la valeur primitive d'un objet String. En pratique, la méthode retourne la chaîne de caractères sous-jacente représentée par l'objet String. Comme toString(), cette méthode est souvent appelée de manière implicite lorsqu'on effectue des opérations sur des objets String, mais elle peut aussi être appelée explicitement.</p>
+    <p><strong>35. raw()</strong> : la méthode statique raw() est utilisée pour créer des chaînes de caractères brutes (sans interprétation des séquences d'échappement). Elle est principalement utilisée avec des littéraux de gabarits (template literals) pour retourner la chaîne exactement telle qu'elle est écrite, y compris les caractères spéciaux, comme les barres obliques inverses (\), sans interpréter les séquences d'échappement comme \n, \t, etc. La syntaxe est la suivante : String.raw(callSite, ...substitutions).
+        <ul>
+            <li>
+                callSite : Un objet contenant des informations sur le littéral de gabarit. En général, il est fourni automatiquement lors de l'utilisation de String.raw avec des littéraux de gabarit.
+            </li>
+            <li>
+                substitutions : Les expressions substituées dans le littéral de gabarit (les parties dynamiques, entre ${}).
+            </li>
+        </ul>
+    </p>
+
+    <script src="5, slice().js"></script>
+</body>
+</html>
